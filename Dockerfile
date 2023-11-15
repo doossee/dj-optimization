@@ -1,4 +1,4 @@
-FROM python:3.9-alpine3.16
+FROM python:3.12-alpine
 
 COPY requirements.txt /temp/requirements.txt
 COPY backend /backend
@@ -8,5 +8,8 @@ EXPOSE 8000
 RUN pip install -r /temp/requirements.txt
 
 RUN adduser --disabled-password dj-user
+
+#RUN apt-get update && apt-get install -y libpq-dev
+
 
 USER dj-user
