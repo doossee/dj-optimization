@@ -26,9 +26,9 @@ class Plan(models.Model):
                                                    
 
 class Subscription(models.Model):
-    client = models.ForeignKey(Client, related_name='subscriptions', on_delete=models.PROTECT)
-    service = models.ForeignKey(Service, related_name='subscriptions', on_delete=models.PROTECT)
-    plan = models.ForeignKey(Plan, related_name='subscriptions', on_delete=models.PROTECT)
+    client = models.ForeignKey(Client, on_delete=models.PROTECT)
+    service = models.ForeignKey(Service, on_delete=models.PROTECT)
+    plan = models.ForeignKey(Plan, on_delete=models.PROTECT)
     
     def __str__(self) -> str:
         return f"{self.client}-{self.service.name}-{self.plan.plan_type}"
