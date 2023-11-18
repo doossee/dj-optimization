@@ -10,6 +10,7 @@ RUN pip install -r /temp/requirements.txt
 RUN adduser --disabled-password dj-user
 
 #RUN apt-get update && apt-get install -y libpq-dev
+#RUN !pip install importlib-metadata==4.13.0
 
 
 USER dj-user
